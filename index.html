@@ -123,7 +123,7 @@
       width="200px" data-aos="zoom-in" data-aos-duration="1000">
     <h1 class="display-4" data-aos="fade-up" data-aos-duration="1200">Rahmat Budianoor</h1>
     <p class="lead" data-aos="fade-up" data-aos-duration="1400">Student | Gamer</p>
-    <a class="darkfix btn btn-primary btn-lg" href="mailto:rahmatbudianoor89@gmail.com" role="button" data-aos="fade-up"
+    <a class="darkfix btn btn-primary btn-md" href="mailto:rahmatbudianoor89@gmail.com" role="button" data-aos="fade-up"
       data-aos-duration="1600">Email Me</a>
   </section>
   <!-- Akhir Jumbotron -->
@@ -282,6 +282,10 @@
   <section class="container py-5">
     <h2 class="mb-3 fw-bold text-center" data-aos="fade-up" data-aos-duration="1200">Contact Me</h2>
     <form class="row justify-content-center g-1" name="rahmat-contact-form">
+      <div class="col-md-9 mb-2 shadow alert alert-success alert-dismissible fade show d-none" role="alert">
+        <strong>Sukses !</strong> Pesan anda telah terkirim.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       <div class="col-md-9 mb-2 shadow p-2 rounded bg-info" data-aos="zoom-in" data-aos-duration="1400">
         <label for="nama-pengirim" class="form-label">Nama</label>
         <input type="text" class="form-control bg-light" id="nama-pengirim" placeholder="Nama Anda" name="nama"
@@ -298,7 +302,11 @@
           required></textarea>
       </div>
       <div class="col-md-9" data-aos="zoom-in" data-aos-duration="1400">
-        <button type="submit" class="darkfix btn btn-info mb-3">Kirim</button>
+        <button type="submit" class="darkfix btn btn-info mb-3 btn-kirim">Kirim</button>
+        <button class="btn btn-info mb-3 btn-loading d-none" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
       </div>
     </form>
   </section>
@@ -342,11 +350,24 @@
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzO4bS4-JGf5QQwNrKr0pYd34S1HsPsSY7Q9jeeIhZ8Qk33z1-GjQZfP-kBhZlDddLr/exec'
     const form = document.forms['rahmat-contact-form']
+    const btnKirim = document.querySelector('.btn-kirim')
+    const btnLoading = document.querySelector('.btn-loading')
+    const successAlert = document.querySelector('.alert')
 
     form.addEventListener('submit', e => {
       e.preventDefault()
+      // ketika tombol submit diklik, tampilkan tombol loading, hilangkan tombol kirim.
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => console.log('Success!', response))
+        .then(response => {
+          // ketika sukses, tampilkan tombol kirim, hilangkan tombol loading, dan tampikan alert.
+          btnKirim.classList.toggle('d-none');
+          btnLoading.classList.toggle('d-none');
+          successAlert.classList.toggle('d-none');
+          form.reset();
+          console.log('Success!', response);
+        })
         .catch(error => console.error('Error!', error.message))
     })
   </script>
