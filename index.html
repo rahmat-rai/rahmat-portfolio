@@ -1,188 +1,350 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Costum CSS -->
-    <link rel="stylesheet" href="style/style.css">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    
-    <!-- Web Icons -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    
-    <title>Rahmat Portfolio</title>
-  </head>
-  <body id="home">
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary bg-gradient shadow">
-      <div class="container">
-        <a class="navbar-brand" href="#">Rahmat Budianoor</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#activity">Activity</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+  <!-- Animate On Scroll CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Costum CSS -->
+  <style>
+    #navbarNav .dark-switch-btn .form-check-input {
+      position: relative;
+      top: -2px;
+    }
+
+    #navbarNav .dark-switch-btn .form-check-input:checked {
+      background-color: #333;
+      border-color: rgb(255, 255, 255, .55);
+    }
+
+    @media (min-width: 575px) and (max-width:767px) {
+      #navbarNav .dark-switch-btn .form-check-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <!-- Dark Mode CSS -->
+  <style type="text/css" media="all">
+    [data-theme="dark"] {
+      background-color: rgb(51, 51, 51) !important;
+      color: rgb(238, 238, 238);
+    }
+
+    /* Kda Tahu */
+    [data-theme="dark"] .bg-light {
+      background-color: rgb(45, 45, 45) !important;
+    }
+
+    /* Mengubah terang(light) menjadi gelap(dark) */
+    [data-theme="dark"] .bg-white {
+      background-color: rgb(17, 17, 17) !important;
+    }
+
+    /* Mengubah putih(white) menjadi hitam(black) */
+    [data-theme="dark"] .bg-black {
+      background-color: rgb(238, 238, 238) !important;
+    }
+
+    /* Mengubah hitam(black) menjadi putih(white) */
+  </style>
+
+  <!-- Google Fonts CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <style type="text/css" media="all">
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+  </style>
+
+  <!-- Web Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <title>Rahmat Portfolio</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary bg-gradient shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">Rahmat Budianoor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#activity">ACTIVITY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">CONTACT</a>
+          </li>
+          <li class="dark-switch-btn nav-item form-check form-switch d-flex justify-content-center align-items-center">
+            <input class="form-check-input" type="checkbox" id="darkSwitch">
+            <label class="form-check-label nav-link" for="darkSwitch">Dark Mode</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Akhir Navbar -->
+
+  <!-- Nambahkan Space -->
+  <br><br>
+
+  <!-- Jumbotron -->
+  <svg id="home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0d6efd" fill-opacity="1"
+      d="M0,224L30,197.3C60,171,120,117,180,106.7C240,96,300,128,360,133.3C420,139,480,117,540,144C600,171,660,245,720,250.7C780,256,840,192,900,165.3C960,139,1020,149,1080,170.7C1140,192,1200,224,1260,218.7C1320,213,1380,171,1410,149.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
+    </path>
+  </svg>
+  <section class="jumbotron text-center py-5">
+    <img src="img/my-avatar.jpg" class="rounded-circle my-2 border border-3 border-primary shadow" alt="Rahmat"
+      width="200px" data-aos="zoom-in" data-aos-duration="1000">
+    <h1 class="display-4" data-aos="fade-up" data-aos-duration="1200">Rahmat Budianoor</h1>
+    <p class="lead" data-aos="fade-up" data-aos-duration="1400">Student | Gamer</p>
+    <a class="btn btn-primary btn-lg" href="mailto:rahmatbudianoor89@gmail.com" role="button" data-aos="fade-up" data-aos-duration="1600">Email Me</a>
+  </section>
+  <!-- Akhir Jumbotron -->
+
+  <!-- About -->
+  <svg id="about" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0dcaf0" fill-opacity="1"
+      d="M0,128L40,128C80,128,160,128,240,144C320,160,400,192,480,186.7C560,181,640,139,720,149.3C800,160,880,224,960,213.3C1040,203,1120,117,1200,106.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+    </path>
+  </svg>
+  <div class="bg-info">
+    <section class="container py-5">
+      <h2 class="mb-3 fw-bold text-center" data-aos="fade-up" data-aos-duration="1200">About Me</h2>
+      <div class="row justify-content g-1">
+        <div class="col-md-6 mb-2 p-3 bg-light rounded" data-aos="fade-up" data-aos-duration="1400">
+          <h3 class="text-center">Aku</h3>
+          <hr class="my-1">
+          <p data-aos="fade-up" data-aos-duration="1600">Hai, perkenalkan nama saya Rahmat Budianoor. Saya adalah
+            pelajar & gamer yang tinggal di Kapuas. Saat ini umur saya 16 tahun. Cita cita saya ingin menjadi seorang
+            programmer handal. Oleh karena itu saya tidak akan pernah menyerah dan terus belajar. Saya ingin menguasai
+            bahasa HTML, CSS, Bootstrap 5, Javascript dan React.Js selama pandemi ini. Dan ini adalah website terbaik yg
+            pernah saya buat menggunakan kemampuan saya.</p>
+        </div>
+        <div class="col-md-6 mb-2 p-3 bg-light rounded" data-aos="fade-up" data-aos-duration="1400">
+          <h3 class="text-center">Perkembanganku</h3>
+          <hr class="my-1">
+          <div class="border p-2 my-1 bg-light rounded" data-aos="zoom-in" data-aos-duration="1600">
+            <h5>HTML</h5>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                aria-valuemin="0" aria-valuemax="100">80%</div>
+            </div>
+          </div>
+          <div class="border p-2 my-1 bg-light rounded" data-aos="zoom-in" data-aos-duration="1600">
+            <h5>CSS</h5>
+            <div class="progress">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65"
+                aria-valuemin="0" aria-valuemax="100">65%</div>
+            </div>
+          </div>
+          <div class="border p-2 my-1 bg-light rounded" data-aos="zoom-in" data-aos-duration="1600">
+            <h5>Javascript</h5>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55"
+                aria-valuemin="0" aria-valuemax="100">55%</div>
+            </div>
+          </div>
+          <div class="border p-2 my-1 bg-light rounded" data-aos="zoom-in" data-aos-duration="1600">
+            <h5>Bootstrap</h5>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="background-color:#6610f2; width: 85%"
+                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0d6efd" fill-opacity="1" d="M0,224L30,197.3C60,171,120,117,180,106.7C240,96,300,128,360,133.3C420,139,480,117,540,144C600,171,660,245,720,250.7C780,256,840,192,900,165.3C960,139,1020,149,1080,170.7C1140,192,1200,224,1260,218.7C1320,213,1380,171,1410,149.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
-    <!-- Akhir Navbar -->
-    
-    <!-- Jumbotron -->
-    <section class="jumbotron text-center">
-      <img src="img/my-avatar.jpg" class="rounded-circle my-2 border border-3 border-primary shadow" alt="Rahmat" width="200px">
-      <h1 id="home" class="display-4">Rahmat Budianoor</h1>
-      <p class="lead">Student | Gamer</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Chat Me</a>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0dcaf0" fill-opacity="1" d="M0,128L40,128C80,128,160,128,240,144C320,160,400,192,480,186.7C560,181,640,139,720,149.3C800,160,880,224,960,213.3C1040,203,1120,117,1200,106.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-    <!-- Akhir Jumbotron -->
-    
-    <!-- About -->
-    <section class="container-fluid bg-info pb-4">
-      <h2 id="about" class="mb-1 text-center">About Me</h2>
-      <div class="container">
-        <div class="row justify-content-evenly">
-          <div class="col-md-5 my-2 shadow p-2 rounded bg-light">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed cursus lectus. Etiam ut accumsan mi, ut fringilla massa. Cras auctor nisl enim, ac aliquam massa consequat at. Maecenas cursus lectus risus, eget imperdiet tellus semper ut. Pellentesque tempor mi nec nunc maximus tristique vel condimentum massa. Ut non nisl et ipsum cursus consectetur.</p>
-          </div>
-          <br>
-          <div class="col-md-5 my-2 shadow p-2 rounded bg-light">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed cursus lectus. Etiam ut accumsan mi, ut fringilla massa. Cras auctor nisl enim, ac aliquam massa consequat at. Maecenas cursus lectus risus, eget imperdiet tellus semper ut. Pellentesque tempor mi nec nunc maximus tristique vel condimentum massa. Ut non nisl et ipsum cursus consectetur.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0dcaf0" fill-opacity="1" d="M0,224L30,197.3C60,171,120,117,180,106.7C240,96,300,128,360,133.3C420,139,480,117,540,144C600,171,660,245,720,250.7C780,256,840,192,900,165.3C960,139,1020,149,1080,170.7C1140,192,1200,224,1260,218.7C1320,213,1380,171,1410,149.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
-    <!-- Akhir About -->
-    
-    <!-- Activity -->
-    <section class="container">
-      <h2 id="activity" class="mb-3 text-center">My Activity</h2>
+  </div>
+  <!-- Akhir About -->
+
+  <!-- Qoutes -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0dcaf0" fill-opacity="1"
+      d="M0,224L30,197.3C60,171,120,117,180,106.7C240,96,300,128,360,133.3C420,139,480,117,540,144C600,171,660,245,720,250.7C780,256,840,192,900,165.3C960,139,1020,149,1080,170.7C1140,192,1200,224,1260,218.7C1320,213,1380,171,1410,149.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
+    </path>
+  </svg>
+  <figure class="container text-center py-5 border bg-light shadow rounded" data-aos="fade-up" data-aos-duration="1200">
+    <blockquote class="blockquote">
+      <p data-aos="fade-up" data-aos-duration="1400">"Teman itu adalah orang yang menyelamatkan dari neraka yang bernama kesepian."</p>
+    </blockquote>
+    <figcaption class="blockquote-footer" data-aos="fade-up" data-aos-duration="1600">
+      <cite title="Source Title">Naruto Uzumaki</cite>
+    </figcaption>
+  </figure>
+  <!-- Akhir Qoutes -->
+
+  <!-- Activity -->
+  <svg id="activity" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0dcaf0" fill-opacity="1"
+      d="M0,128L40,128C80,128,160,128,240,144C320,160,400,192,480,186.7C560,181,640,139,720,149.3C800,160,880,224,960,213.3C1040,203,1120,117,1200,106.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+    </path>
+  </svg>
+  <div class="bg-info">
+    <section class="container py-5">
+      <h2 class="mb-3 fw-bold text-center" data-aos="fade-up" data-aos-duration="1200">My Activity</h2>
       <div class="row justify-content-center">
-        <div class="col-md-4 mb-3">
-          <div class="card shadow">
-            <img src="img/my-avatar.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Sekolah Online</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card bg-light shadow">
+            <img src="img/sekolah-online.jpg" class="card-img-top" alt="sekolah" data-aos="zoom-in" data-aos-duration="1600">
+            <div class="card-body bg-light">
+              <h5 class="card-title" data-aos="fade-down" data-aos-duration="1700">Sekolah Online</h5>
+              <p class="card-text" data-aos="fade-down" data-aos-duration="1800">Sekolah online adalah kegiatan utama saya ketika pandemi covid-19. Setiap hari, saya selau diberikan tugas, kecuali hari Sabtu dan Minggu.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <div class="card shadow">
-            <img src="img/my-avatar.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Main Game</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card bg-light shadow">
+            <img src="img/main-game.jpg" class="card-img-top" alt="main" data-aos="zoom-in" data-aos-duration="1600">
+            <div class="card-body bg-light">
+              <h5 class="card-title" data-aos="fade-down" data-aos-duration="1700">Main Game</h5>
+              <p class="card-text" data-aos="fade-down" data-aos-duration="1800">Setelah jenuh dengan sekolah online, saya biasanya akan bermain game. Game yang saya mainkan adalah Mobile Legends dan Clash Of Clans.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <div class="card shadow">
-            <img src="img/my-avatar.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Rebahan</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card bg-light shadow">
+            <img src="img/sosial-media.jpg" class="card-img-top" alt="sosmed" data-aos="zoom-in" data-aos-duration="1600">
+            <div class="card-body bg-light">
+              <h5 class="card-title" data-aos="fade-down" data-aos-duration="1700">Main Sosmed</h5>
+              <p class="card-text" data-aos="fade-down" data-aos-duration="1800">Terkadang saya sering menghabiskan waktu untuk bermain sosial media. Dengan sosial media saya dapat mengakses hiburan dan informasi.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <div class="card shadow">
-            <img src="img/my-avatar.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nonton Anime</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card bg-light shadow">
+            <img src="img/nonton-anime.jpg" class="card-img-top" alt="anime" data-aos="zoom-in" data-aos-duration="1600">
+            <div class="card-body bg-light">
+              <h5 class="card-title" data-aos="fade-down" data-aos-duration="1700">Nonton Anime</h5>
+              <p class="card-text" data-aos="fade-down" data-aos-duration="1800">Ketika internet saya ngelag, saya biasanya memutuskan untuk menonton anime. Saya biasanya menonton anime genre action atau genre school.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <div class="card shadow">
-            <img src="img/my-avatar.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Belajar Coding</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card bg-light shadow">
+            <img src="img/belajar-coding.jpg" class="card-img-top" alt="coding" data-aos="zoom-in" data-aos-duration="1600">
+            <div class="card-body bg-light">
+              <h5 class="card-title" data-aos="fade-down" data-aos-duration="1700">Belajar Coding</h5>
+              <p class="card-text" data-aos="fade-down" data-aos-duration="1800">Menjadi programmer adalah cita cita saya. Jadi setiap hari saya harus belajar tentang kode, agar dapat melatih kemampuan saya di masa depan.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0dcaf0" fill-opacity="1" d="M0,128L40,128C80,128,160,128,240,144C320,160,400,192,480,186.7C560,181,640,139,720,149.3C800,160,880,224,960,213.3C1040,203,1120,117,1200,106.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-    <!-- Akhir Activity -->
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0dcaf0" fill-opacity="1" d="M0,224L30,197.3C60,171,120,117,180,106.7C240,96,300,128,360,133.3C420,139,480,117,540,144C600,171,660,245,720,250.7C780,256,840,192,900,165.3C960,139,1020,149,1080,170.7C1140,192,1200,224,1260,218.7C1320,213,1380,171,1410,149.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
-    
-    <!-- Contact -->
-    <section class="container">
-      <h2 id="contact" class="mb-3 text-center">Contact Me</h2>
-      <form class="row justify-content-center g-3" name="rahmat-contact-form">
-        <div class="col-md-8 shadow p-2 rounded bg-info">
-          <label for="nama-pengirim" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="nama-pengirim" placeholder="Nama Anda" name="nama" required>
-        </div>
-        <div class="col-md-8 shadow p-2 rounded bg-info">
-          <label for="email-pengirim" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email-pengirim" placeholder="name@example.com" name="email" required>
-        </div>
-        <div class="col-md-8 shadow p-3 rounded bg-info">
-          <label for="pesan-pengirim" class="form-label">Pesan</label>
-          <textarea class="form-control" id="pesan-pengirim" placeholder="Isi Pesan" rows="5" name="pesan" required></textarea>
-        </div>
-        <div class="col-md-8">
-          <button type="submit" class="btn btn-info mb-3">Kirim</button>
-        </div>
-      </form>
-    </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0d6efd" fill-opacity="1" d="M0,128L80,138.7C160,149,320,171,480,160C640,149,800,107,960,96C1120,85,1280,107,1360,117.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
-    <!-- Akhir Contact -->
-    
-    <!-- Footer -->
-    <footer class="container-fluid py-2 bg-primary bg-gradient">
-      <h4 class="text-center text-light">Rahmat Budianoor</h4>
-      <div class="text-center">
-        <a href="https://www.facebook.com/rahmat.budianoor.5" target="_blank"><i class="bi bi-facebook mx-2" style="font-size: 2rem; color: white;"></i></a>
-        <a href="https://www.instagram.com/rahmat710_/" target="_blank"><i class="bi bi-instagram mx-2" style="font-size: 2rem; color: white;"></i></a>
-        <a href="https://https://wa.me/6285787932905" target="_blank"><i class="bi bi-whatsapp mx-2" style="font-size: 2rem; color: white;"></i></a>
-        <a href="https://t.me/Rahmat710" target="_blank"><i class="bi bi-telegram mx-2" style="font-size: 2rem; color: white;"></i></a>
+  </div>
+  <!-- Akhir Activity -->
+
+  <!-- Contact -->
+  <svg id="contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0dcaf0" fill-opacity="1"
+      d="M0,224L30,197.3C60,171,120,117,180,106.7C240,96,300,128,360,133.3C420,139,480,117,540,144C600,171,660,245,720,250.7C780,256,840,192,900,165.3C960,139,1020,149,1080,170.7C1140,192,1200,224,1260,218.7C1320,213,1380,171,1410,149.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
+    </path>
+  </svg>
+  <section class="container py-5">
+    <h2 class="mb-3 fw-bold text-center" data-aos="fade-up" data-aos-duration="1200">Contact Me</h2>
+    <form class="row justify-content-center g-1" name="rahmat-contact-form">
+      <div class="col-md-9 mb-2 shadow p-2 rounded bg-info" data-aos="zoom-in" data-aos-duration="1400">
+        <label for="nama-pengirim" class="form-label">Nama</label>
+        <input type="text" class="form-control bg-light" id="nama-pengirim" placeholder="Nama Anda" name="nama"
+          required>
       </div>
-      <p class="text-center text-light">&copy; 2021 All right reserved</p>
-      </footer>
-    <!-- Akhir Footer -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzO4bS4-JGf5QQwNrKr0pYd34S1HsPsSY7Q9jeeIhZ8Qk33z1-GjQZfP-kBhZlDddLr/exec'
-      const form = document.forms['rahmat-contact-form']
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
-      })
-    </script>
-  
-  </body>
+      <div class="col-md-9 mb-2 shadow p-2 rounded bg-info" data-aos="zoom-in" data-aos-duration="1400">
+        <label for="email-pengirim" class="form-label">Email</label>
+        <input type="email" class="form-control bg-light" id="email-pengirim" placeholder="name@example.com"
+          name="email" required>
+      </div>
+      <div class="col-md-9 mb-2 shadow p-2 rounded bg-info" data-aos="zoom-in" data-aos-duration="1400">
+        <label for="pesan-pengirim" class="form-label">Pesan</label>
+        <textarea class="form-control bg-light" id="pesan-pengirim" placeholder="Isi Pesan" rows="5" name="pesan"
+          required></textarea>
+      </div>
+      <div class="col-md-9" data-aos="zoom-in" data-aos-duration="1400">
+        <button type="submit" class="btn btn-info mb-3">Kirim</button>
+      </div>
+    </form>
+  </section>
+  <!-- Akhir Contact -->
+
+  <!-- Footer -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0d6efd" fill-opacity="1"
+      d="M0,128L80,138.7C160,149,320,171,480,160C640,149,800,107,960,96C1120,85,1280,107,1360,117.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+    </path>
+  </svg>
+  <footer class="container-fluid py-1 bg-primary bg-gradient">
+    <h4 class="text-center text-white">Rahmat Budianoor</h4>
+    <div class="text-center">
+      <a href="https://www.facebook.com/rahmat.budianoor.5" target="_blank"><i class="bi bi-facebook mx-2"
+          style="font-size: 2rem; color: white;"></i></a>
+      <a href="https://www.instagram.com/rahmat710_/" target="_blank"><i class="bi bi-instagram mx-2"
+          style="font-size: 2rem; color: white;"></i></a>
+      <a href="https://github.com/Rahmat710" target="_blank"><i class="bi bi-github mx-2"
+          style="font-size: 2rem; color: white;"></i></a>
+      <a href="https://wa.me/6285787932905" target="_blank"><i class="bi bi-whatsapp mx-2"
+          style="font-size: 2rem; color: white;"></i></a>
+      <a href="https://t.me/Rahmat710" target="_blank"><i class="bi bi-telegram mx-2"
+          style="font-size: 2rem; color: white;"></i></a>
+    </div>
+    <p class="text-center text-white">&copy; 2021 All right reserved</p>
+  </footer>
+  <!-- Akhir Footer -->
+
+  <!-- Bootstrap Javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <!-- Dark Mode Javascript -->
+  <script type="text/javascript" charset="utf-8">
+    function initTheme() { var e = null !== localStorage.getItem("darkSwitch") && "dark" === localStorage.getItem("darkSwitch"); darkSwitch.checked = e, e ? document.body.setAttribute("data-theme", "dark") : document.body.removeAttribute("data-theme") } function resetTheme() { darkSwitch.checked ? (document.body.setAttribute("data-theme", "dark"), localStorage.setItem("darkSwitch", "dark")) : (document.body.removeAttribute("data-theme"), localStorage.removeItem("darkSwitch")) } var darkSwitch = document.getElementById("darkSwitch"); window.addEventListener("load", function () { darkSwitch && (initTheme(), darkSwitch.addEventListener("change", function () { resetTheme() })) });
+  </script>
+
+  <!-- Form Javascript -->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzO4bS4-JGf5QQwNrKr0pYd34S1HsPsSY7Q9jeeIhZ8Qk33z1-GjQZfP-kBhZlDddLr/exec'
+    const form = document.forms['rahmat-contact-form']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+  <!-- Animate On Scroll Javascript -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 100,
+    });
+  </script>
+
+</body>
+
 </html>
